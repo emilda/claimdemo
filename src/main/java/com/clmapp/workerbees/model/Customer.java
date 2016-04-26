@@ -7,7 +7,7 @@ public class Customer {
 	private String name;
 	private String policyNbr;
 	private String distance;
-	private String latlong;
+	private String position;
 	private String telephoneNbr;
 	private String city;
 	private String state;
@@ -22,11 +22,11 @@ public class Customer {
 	
 	public Customer() {}
 	
-	public Customer (String name,String policyNbr, String distance, String latlong,String telephoneNbr, String city, String state, String postalCode, String countryCode, String streetName, String structureNum){
+	public Customer (String name,String policyNbr, String distance, String position,String telephoneNbr, String city, String state, String postalCode, String countryCode, String streetName, String structureNum){
 		this.name = name;
 		this.policyNbr = policyNbr;
 		this.distance = distance;
-		this.latlong = latlong;
+		this.position = position;
 		this.telephoneNbr = telephoneNbr;
 		this.city = city;
 		this.state = state;
@@ -62,12 +62,12 @@ public class Customer {
 		this.distance = distance;
 	}
 
-	public String getLatlong() {
-		return latlong;
+	public String getposition() {
+		return position;
 	}
 
-	public void setLatlong(String latlong) {
-		this.latlong = latlong;
+	public void setposition(String position) {
+		this.position = position;
 	}
 
 	public String getTelephoneNbr() {
