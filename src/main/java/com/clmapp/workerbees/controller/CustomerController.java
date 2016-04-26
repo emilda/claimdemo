@@ -35,7 +35,7 @@ public class CustomerController {
 	    Customer customer = new Customer(customerMap.get("name").toString(), 
 	    	customerMap.get("policyNbr").toString(),
 	    	customerMap.get("distance").toString(),
-	    	customerMap.get("latlong").toString(),
+	    	customerMap.get("position").toString(),
 	    	customerMap.get("telephoneNbr").toString(),
 	    	customerMap.get("city").toString(),
 	    	customerMap.get("state").toString(),
