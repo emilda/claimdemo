@@ -87,7 +87,7 @@ public class CustomerController {
 	    return response;
 	  }
 	  
-	  @RequestMapping(method = RequestMethod.GET,  produces =MediaType.APPLICATION_JSON_VALUE )
+	  @RequestMapping(method = RequestMethod.GET,  value="/customers", produces =MediaType.APPLICATION_JSON_VALUE )
 	  public Map<String, Object> getAllCustomers(){
 	    List<Customer> customers = custRepository.findAll();
 	    Map<String, Object> response = new LinkedHashMap<String, Object>();
