@@ -46,7 +46,7 @@ a:hover
 {
    width: 150px;
    height: 799px;
-   background-color: #FF0000;
+   background-color: #cc2d30;
    background-image: none;
    border: 0px #000000 solid;
 }
@@ -70,7 +70,7 @@ a:hover
 {
    width: 150px;
    height: 70px;
-   background-color: #FF0000;
+   background-color: #cc2d30;
    background-image: none;
    border: 0px #000000 solid;
 }
@@ -118,7 +118,7 @@ a:hover
 {
    width: 620px;
    height: 40px;
-   background-color: #FF0000;
+   background-color: #cc2d30;
    background-image: none;
    border: 0px #000000 solid;
 }
@@ -299,7 +299,7 @@ a:hover
 }
 #Editbox1:focus
 {
-   border-color: #FF0000;
+   border-color: #cc2d30;
    -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(255,0,0,0.60);
    -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(255,0,0,0.60);
    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(255,0,0,0.60);
@@ -311,7 +311,7 @@ a:hover
    -moz-border-radius: 4px;
    -webkit-border-radius: 4px;
    border-radius: 4px;
-   background-color: #FF0000;
+   background-color: #cc2d30;
    background-image: none;
    color: #FFFFFF;
    font-family: Arial;
@@ -340,7 +340,7 @@ a:hover
    -moz-border-radius: 4px;
    -webkit-border-radius: 4px;
    border-radius: 4px;
-   background-color: #FF0000;
+   background-color: #cc2d30;
    background-image: none;
    color: #FFFFFF;
    font-family: Arial;
@@ -353,7 +353,7 @@ a:hover
    -moz-border-radius: 4px;
    -webkit-border-radius: 4px;
    border-radius: 4px;
-   background-color: #FF0000;
+   background-color: #cc2d30;
    background-image: none;
    color: #FFFFFF;
    font-family: Arial;
@@ -964,7 +964,7 @@ div#container
    visibility: visible;
    display: inline;
    color: #FFFFFF;
-   background-color: #FF0000;
+   background-color: #cc2d30;
    background-image: none;
 }
 #Label2
@@ -990,7 +990,7 @@ div#container
    visibility: visible;
    display: inline;
    color: #FFFFFF;
-   background-color: #FF0000;
+   background-color: #cc2d30;
    background-image: none;
 }
 #Button3
@@ -1002,6 +1002,6 @@ div#container
    visibility: visible;
    display: inline;
    color: #FFFFFF;
-   background-color: #FF0000;
+   background-color: #cc2d30;
    background-image: none;
 }
