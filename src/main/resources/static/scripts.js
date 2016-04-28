@@ -69,7 +69,7 @@ function GoogleMapRecall(address)
 function callClaimSvcByzip()
 {
         //alert("In claim");
-		var claimSvcURL = "http://localhost:8080/custbypostalcode/"+ addy;
+		var claimSvcURL = "/custbypostalcode/"+ addy;
         var returnData = "";
         $.ajax({
             type: "GET",
