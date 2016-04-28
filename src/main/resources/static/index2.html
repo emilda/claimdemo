@@ -2,11 +2,12 @@
 <!-- saved from url=(0016)http://localhost -->
 <html> <div id="googleMap" style="width:500px;height:380px;">>
 <head>
-<title>WWB Template 4</title>
+<title>DART - Drone Assisted Response Team</title>
 <meta name="generator" content="WYSIWYG Web Builder 11 Trial Version - http://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="claimapp.css">
+<script src="scripts.js"></script>
 </head>
 <body onload="GoogleMapInit('GoogleMaps', 40.7127837, -74.00594130000002, 'Hartford,CT');">
 <div id="container">
@@ -38,7 +39,7 @@
 <div id="wb_Text3">
 <span style="color:#000000;font-family:Arial;font-size:15px;"><strong>Home</strong></span></div>
 <div id="wb_Text4">
-<span style="color:#000000;font-family:Arial;font-size:15px;">What' New?</span></div>
+<span style="color:#000000;font-family:Arial;font-size:15px;">Your Tasks</span></div>
 <div id="wb_Text5">
 <span style="color:#000000;font-family:Arial;font-size:15px;">Your Hobbies</span></div>
 <div id="wb_Text6">
@@ -51,151 +52,13 @@
 <span style="color:#000000;font-family:Arial;font-size:37px;"><strong>Welcome to DART</strong></span></div>
 <div id="wb_Text10">
 <span style="color:#FFFFFF;font-family:Arial;font-size:11px;">Copyright � 2014 by &quot;Your Name&quot;&nbsp; �&nbsp; All Rights reserved&nbsp; �&nbsp; E-Mail: yourname@domain.com</span></div>
-<div id="wb_Text11">
-&nbsp;</div>
+<div id="wb_Text11">&nbsp;</div>
 <div id="wb_Text12">
 <span style="color:#FFFFFF;font-family:Arial;font-size:24px;"><strong>YOUR WEBSITES NAME</strong></span></div>
 <label for="" id="Label1">Enter Address Information For Impacted Area</label>
 <div id="wb_JavaScript1">
 <div id="GoogleMaps"></div>
 <script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
-<script>
-var map;
-var marker;
-var geocoder;
-var insuredlist;
-var addy;
-function GoogleMapInit(id, latitude, longitude, address) 
-{    
-   var latlng = new google.maps.LatLng(latitude, longitude);
-   var latlngMarker = new google.maps.LatLng(latitude, longitude);
-   var mapOptions = 
-   {        
-      center: latlng,        
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      mapTypeControl: true,        
-      scrollwheel: true,
-      streetViewControl: false,        
-      zoom: 9,
-      zoomControl: true,        
-      zoomControlOptions: { style: google.maps.ZoomControlStyle.SMALL }
-   }
-   element = document.getElementById(id);
-   map = new google.maps.Map(element, mapOptions);   
-   marker = new google.maps.Marker({ draggable:true, map: map, position: latlngMarker});   
-   geocoder = new google.maps.Geocoder();
-   geocoder.geocode({'address': address}, function(results, status) 
-   {
-      if (status == google.maps.GeocoderStatus.OK) 
-      {
-         map.setCenter(results[0].geometry.location);
-         var marker = new google.maps.Marker(
-         {
-            map: map, 
-            position: results[0].geometry.location
-         });
-      } 
-      else 
-      {
-        //    alert("Geocode was not successful: " + status);
-      }
-   });
-}
-//geocode function
-function GoogleMapcall()
-{
-	addy = document.getElementById("Editbox1").value;
-	GoogleMapRecall(addy);
-}
-
-function GoogleMapRecall(address) 
-{
-	//alert("new");
-	//alert(address); 
-    geocoder.geocode( { 'address': address}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) 
-        {
-            map.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-                map: map, 
-                position: results[0].geometry.location
-            });
-        } 
-        else 
-        {
-            alert("Geocode was not successful for the following reason: " + status);
-        }
-    });
-}
-
-function callClaimSvcByzip()
-{
-        //alert("In claim");
-		var claimSvcURL = "http://localhost:8080/custbypostalcode/"+ addy;
-        var returnData = "";
-        $.ajax({
-            type: "GET",
-            dataType: 'jsonp',
-			jsonp: 'callback',
-			jsonpCallback: 'jsonpCallback',
-            async: true,
-            url: claimSvcURL,
-            success: function(data) {
-					//alert("Server said123:\n '" + data + "'");
-            },
-			error: function(e){  
-					alert('Error121212: ' + e);
-					console.log(e);
-					
-       }  
-        });
-        return (false);
-
-    }
-function jsonpCallback(data) {
-	//alert("in callback");
-
-	console.log(data);
-	insuredlist = data;
-	console.log(insuredlist);
-	console.log(insuredlist.Customer_zip.length);
-	buildInsured(insuredlist);
-}
-function buildInsured(insuredlist) {
-   console.log("in build insured");
-   var insured = 0;
-   var _lat;
-
-
-   
- 	 	for (insured = 0; insured < insuredlist.Customer_zip.length; insured++) {
-		  var parsed_lat_long = { lat:parseFloat( insuredlist.Customer_zip[insured].position.substring(0, 9) ), lng:parseFloat( insuredlist.Customer_zip[insured].position.substring(10, 19)  ) };
-		  console.log(parsed_lat_long);
- 	  	  var marker = new google.maps.Marker({
- 			//icon: icon.png,
-			position: parsed_lat_long,
-			animation: google.maps.Animation.DROP,
- 			map: map,
- 			title: "Policy: " + insuredlist.Customer_zip[insured].policyNbr
- 		  });
- 		  
- 		  var infowindow = new google.maps.InfoWindow({ 
-      		content: '<IMG BORDER="0" ALIGN="Left" SRC="icon.png">' + 
-      		"Insured: " +  insuredlist.Customer_zip[insured].name + "<br />" + 
-      		"Policy #: " + insuredlist.Customer_zip[insured].policynbr + "<br />" +
-      		"Contact Info: " + insuredlist.Customer_zip[insured].telephoneNbr + "<br />" +  
-      		'<IMG BORDER="0" ALIGN="Left" SRC="storm damage example.jpg">'
-	  	  });
- 		   		  
- 		  marker.addListener('click', function() {
-   			map.setZoom(8);
-    		map.setCenter(marker.getPosition());
-    		infowindow.open(map, marker);
- 		  });
-	  	}
-}
-</script>
-
 </div>
 <input type="text" id="Editbox1" name="address" value="">
 <input type="button" id="Button1" onclick="GoogleMapcall()" name="" value="Find">
