@@ -1,72 +1,35 @@
 <!doctype html>
-<!-- saved from url=(0016)http://localhost -->
-<html> <div id="googleMap" style="width:500px;height:380px;">>
+<!DOCTYPE html>
+<html>
 <head>
 <title>DART - Drone Assisted Response Team</title>
-<meta name="generator" content="WYSIWYG Web Builder 11 Trial Version - http://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="claimapp.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 <script src="scripts.js"></script>
 </head>
-<body onload="GoogleMapInit('GoogleMaps', 40.7127837, -74.00594130000002, 'Hartford,CT');">
-<div id="container">
-<div id="wb_Shape1">
-<div id="Shape1"></div></div>
-<div id="wb_Shape2">
-<div id="Shape2"></div></div>
-<div id="wb_Shape3">
-<div id="Shape3"></div></div>
-<div id="wb_Shape4">
-<div id="Shape4"></div></div>
-<div id="wb_Shape5">
-<div id="Shape5"></div></div>
-<a href="http://www.wysiwygwebbuilder.com" target="_blank"><img src="images/builtwithwwb11.png" alt="WYSIWYG Web Builder" style="position:absolute;left:61px;top:758px;border-width:0;z-index:250"></a>
-<div id="wb_Shape10">
-<div id="Shape10"></div></div>
-<div id="wb_Shape16">
-<div id="Shape16"></div></div>
-<div id="wb_Shape17">
-<div id="Shape17"></div></div>
-<div id="wb_Shape18">
-<div id="Shape18"></div></div>
-<div id="wb_Shape19">
-<div id="Shape19"></div></div>
-<div id="wb_Shape20">
-<div id="Shape20"></div></div>
-<div id="wb_Text2">
-<span style="color:#000000;font-family:Arial;font-size:24px;"><strong>Drone Assisted Response Team</strong></span></div>
-<div id="wb_Text3">
-<span style="color:#000000;font-family:Arial;font-size:15px;"><strong>Home</strong></span></div>
-<div id="wb_Text4">
-<span style="color:#000000;font-family:Arial;font-size:15px;">Your Tasks</span></div>
-<div id="wb_Text5">
-<span style="color:#000000;font-family:Arial;font-size:15px;">Your Hobbies</span></div>
-<div id="wb_Text6">
-<span style="color:#000000;font-family:Arial;font-size:15px;">Your Pictures</span></div>
-<div id="wb_Text7">
-<span style="color:#000000;font-family:Arial;font-size:15px;">Downloads</span></div>
-<div id="wb_Text8">
-<span style="color:#000000;font-family:Arial;font-size:15px;">Contact</span></div>
-<div id="wb_Text9">
-<span style="color:#000000;font-family:Arial;font-size:37px;"><strong>Welcome to DART</strong></span></div>
-<div id="wb_Text10">
-<span style="color:#FFFFFF;font-family:Arial;font-size:11px;">Copyright � 2014 by &quot;Your Name&quot;&nbsp; �&nbsp; All Rights reserved&nbsp; �&nbsp; E-Mail: yourname@domain.com</span></div>
-<div id="wb_Text11">&nbsp;</div>
-<div id="wb_Text12">
-<span style="color:#FFFFFF;font-family:Arial;font-size:24px;"><strong>YOUR WEBSITES NAME</strong></span></div>
-<label for="" id="Label1">Enter Address Information For Impacted Area</label>
-<div id="wb_JavaScript1">
-<div id="GoogleMaps"></div>
-<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
-</div>
-<input type="text" id="Editbox1" name="address" value="">
-<input type="button" id="Button1" onclick="GoogleMapcall()" name="" value="Find">
-<label for="" id="Label2">Do you wish to initiate drone assistance for the impacted area?</label>
-<input type="button" id="Button2" onclick="callClaimSvcByzip()" name="" value="Yes">
-<input type="button" id="Button3" name="" value="No">
-</div>
-	
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALcUV_r55WyL5iw6EvnUaTm33A9SjFl74&callback=initMap"
-    async defer></script></body> -->
+<body>
+<p><span style="font-size:37px;"><strong>Welcome to DART</strong></span></div></p>
+<p>
+<span style="font-size:24px;">
+<strong>Drone Assisted Response Team</strong></span>
+</p>
+<ul>
+  <li><a class="active" href="index.html">Home</a></a></li>
+  <li><a href="#news">Your Tasks</a></li>
+  <li><a href="#contact">Claim</a></li>
+  <li><a href="index2.html">Upload Images</a></li>
+  <li style="float:right"><a class="active" href="#about">Login</a></li>
+</ul>
+<P>
+
+<form action="demo_form.asp">
+<span style="font-size:18px;"><label for="">Please upload images of affected area</label></span>
+<P>
+
+  <input type="file" id="Button1" name="pic" accept="image/*">
+  <input type="submit" id="Button1" value="Upload">
+</form>
+</P>
+</body>
 </html>
