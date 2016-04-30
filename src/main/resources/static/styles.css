@@ -61,3 +61,13 @@ li:last-child {
    font-weight: normal;
    font-size: 13px;
 }
+
+#wb_JavaScript1
+{
+   position: absolute;
+   left: 223px;
+   top: 404px;
+   width: 523px;
+   height: 396px;
+   z-index: 24;
+}

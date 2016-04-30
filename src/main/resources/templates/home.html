@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DART - Drone Assisted Response Team</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<script src="scripts.js"></script>
+</head>
+<body onload="GoogleMapInit('GoogleMaps', 40.7127837, -74.00594130000002, 'Hartford,CT');">
+<p><span style="font-size:37px;"><strong>Welcome to DART</strong></span></p>
+<p>
+<span style="font-size:24px;">
+<strong>Drone Assisted Response Team</strong></span>
+</p>
+<ul>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a href="#news">Your Tasks</a></li>
+  <li><a href="#contact">Claim</a></li>
+  <li><a href="index2.html">Upload Images</a></li>
+  <li style="float:right"><a class="active" href="#about">Login</a></li>
+</ul>
+<p>
+<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+
+	<div>
+		<ul>
+			<li th:each="file : ${files}" th:text="${file}"></li>
+		</ul>
+	</div>
+</p>	
+<span style="font-size:18px;"><label>Enter Address Information For Impacted Area</label></span>
+<div id="wb_JavaScript1">
+<div id="GoogleMaps"></div>
+</div>
+<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
+<input type="text" id="Editbox1" name="address" value="" />
+<input type="button" id="Button1" onclick="GoogleMapcall()" name="" value="Find" />
+<label for="" id="Label2">Do you wish to initiate drone assistance for the impacted area?</label>
+<input type="button" id="Button2" onclick="callClaimSvcByzip()" name="" value="Yes" />
+<input type="button" id="Button3" name="" value="No" />
+</body>
+</html>
